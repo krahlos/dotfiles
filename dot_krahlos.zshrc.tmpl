@@ -16,7 +16,7 @@ fi
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 
 # Add custom, local installations to PATH
-export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.local/bin${PATH+:$PATH}"
 
 # Homebrew
 export HOMEBREW_PREFIX="/opt/homebrew";
