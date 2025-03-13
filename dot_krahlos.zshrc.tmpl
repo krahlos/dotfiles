@@ -6,6 +6,8 @@ alias lt="ls -ltrF"
 alias lls="ls -alSrF"
 alias llt="ls -altrF"
 
+alias cdtmp=cd "$(mktemp -d)"
+
 {{ if eq .chezmoi.os "darwin" }}
 # Add sys link to iCloud
 if [ ! -L "$HOME/.icloud" ]; then
