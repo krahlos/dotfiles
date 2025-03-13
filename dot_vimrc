@@ -1,6 +1,3 @@
-" Setting some decent VIM settings for programming
-" This source file comes from git-for-windows build-extra repository (git-extra/vimrc)
-
 ru! defaults.vim                " Use Enhanced Vim defaults
 set mouse=                      " Reset the mouse setting from defaults
 aug vimStartup | au! | aug END  " Revert last positioned jump, as it is defined below
@@ -14,6 +11,14 @@ set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
 set wildmode=list:longest,longest:full   " Better command line completion
 
+" Enable line numbers, whitespace visibility, and tab indicators
+set number                      " Show absolute line numbers
+set list                        " Enable visibility of whitespace characters
+set listchars=tab:»·,trail:·,extends:>,precedes:<,space:·  " Define symbols for whitespace
+
+" Enable pasting with CTRL+V
+set pastetoggle=<C-V>
+
 " Show EOL type and last modified timestamp, right after the filename
 " Set the statusline
 set statusline=%f               " filename relative to current $PWD
@@ -26,12 +31,23 @@ set statusline+=%=              " Rest: right align
 set statusline+=%l,%c%V         " Position in buffer: linenumber, column, virtual column
 set statusline+=\ %P            " Position in buffer: Percentage
 
-if &term =~ 'xterm-256color'    " mintty identifies itself as xterm-compatible
-  if &t_Co == 8
-    set t_Co = 256              " Use at least 256 colors
-  endif
-  " set termguicolors           " Uncomment to allow truecolors on mintty
-endif
+" Set performance & usability enhancements
+set updatetime=300              " Faster updates (default is 4000ms)
+set timeoutlen=500              " Reduce time for mapped sequences
+set scrolloff=8                 " Keep cursor 8 lines from top/bottom when scrolling
+" set cursorline                  " Highlight the current line
+set autochdir                   " Automatically change the working directory to the file's location
+set undofile                    " Enable persistent undo
+set backup                      " Enable backup files
+set swapfile                    " Enable swap files for recovery
+set termguicolors               " Enable true color support
+
+" Set indentation & tabs
+set expandtab                   " Use spaces instead of tabs
+set shiftwidth=4                " Number of spaces per indentation level
+set tabstop=4                   " Number of spaces per tab character
+set smartindent                 " Auto-indent new lines
+
 "------------------------------------------------------------------------------
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
