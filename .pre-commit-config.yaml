@@ -1,0 +1,19 @@
+default_install_hook_types: [pre-commit, commit-msg, pre-push]
+minimum_pre_commit_version: 3.6.0
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.0.2
+    hooks:
+    - id: stylua
+      args: [--config-path, .stylua.toml]
+      files: \.(rs|lua)$
