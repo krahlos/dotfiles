@@ -111,3 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Settings for the History
+HISTSIZE=20000
+HISTFILESIZE=20000
+HISTFILE=$HOME/.zsh_history
