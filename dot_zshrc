@@ -5,35 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ========================================================
-# PATH VARIABLE
-
-# Default
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-
-# Add custom, local installations to PATH
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-# ========================================================
-# BREW ENV
-
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-
-# ========================================================
-# Flutter
-
-export PATH="$PATH:/usr/local/bin/flutter/bin"
-
-# ========================================================
-# Oh My Zsh
-
-source $HOME/.krahlos.zshrc
 source $HOME/.oh-my.zshrc
+source $HOME/.krahlos.zshrc
 
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
