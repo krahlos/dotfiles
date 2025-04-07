@@ -13,9 +13,10 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_RUNTIME_DIR="$HOME/.local/run"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-source $XDG_CONFIG_HOME/krahlos/.aliases.zshrc
-source $XDG_CONFIG_HOME/krahlos/.oh-my.zshrc
-source $XDG_CONFIG_HOME/krahlos/.krahlos.zshrc
+source $XDG_CONFIG_HOME/krahlos/aliases.zshrc
+source $XDG_CONFIG_HOME/krahlos/functions.sh
+source $XDG_CONFIG_HOME/krahlos/oh-my.zshrc
+source $XDG_CONFIG_HOME/krahlos/krahlos.zshrc
 
 source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
