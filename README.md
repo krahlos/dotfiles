@@ -13,7 +13,7 @@ echo "machine github.com login <username> password <token>" >> $HOME/.netrc
 Then install the `chezmoi` dotfile manager and `init` it with this repository:
 
 ```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:krahlos/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:$GITHUB_USERNAME/dotfiles.git
 ```
 
 ## Configuration
@@ -22,9 +22,9 @@ Add the following to the `$HOME/.config/chezmoi/chezmoi.toml` file:
 
 ```toml
 [data]
-    name = "Marco Krahl"
-    email = "marco-krahl@web.de"
-    gh_user = "krahlos"
-    workspaces = "~/workspaces"
-    editor = "code"
+    name = "Jon Doe"
+    email = "jon.doe@example.org"
+    gh_user = "jondoe47"
+    workspaces = "/home/jon/workspaces"
+    editor = "nvim"
 ```
